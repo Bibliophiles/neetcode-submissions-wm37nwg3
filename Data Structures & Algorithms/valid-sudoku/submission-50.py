@@ -6,7 +6,6 @@ class Solution:
 
         for row in range(9):
             for col in range(9):
-
                 if board[row][col] == '.':
                     continue
 
@@ -17,13 +16,12 @@ class Solution:
                 if digit_mask & row_masks[row]:
                     return False
                 if digit_mask & col_masks[col]:
-                    return False 
+                    return False
                 if digit_mask & box_masks[box_index]:
                     return False 
-
+                
                 row_masks[row] |= digit_mask
                 col_masks[col] |= digit_mask
                 box_masks[box_index] |= digit_mask
 
-        
         return True
